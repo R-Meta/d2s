@@ -2,7 +2,7 @@
 __pycache__/
 train_test_datasets/
 Hierarchical-Localization/
-custom_datasets/
+custom_dataset/
 temp/
 *.py[cod]
 *$py.class
