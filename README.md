@@ -13,7 +13,7 @@
     - [Download preprocessed datasets](#Download-preprocessed-datasets)
 - [Evaluation](#Evaluation-with-pre-trained-models)
 - [Training](#Training)
-- [Run with your own dataset](#Run_with_your_own_dataset)
+- [Run with your own dataset](#Run-with-your-own-dataset)
 - [BibTex Citation](#bibTex-citation)
 
 ## Introduction  
