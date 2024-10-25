@@ -61,7 +61,8 @@ def run_colmap(confs):
     colmap_command = ["colmap", "automatic_reconstructor"]
     args = {
             "--workspace_path": workspace_path,
-            "--image_path": images_path
+            "--image_path": images_path,
+            "--dense": "0"
             }
     for k, v in args.items():
         colmap_command.append(str(k))
