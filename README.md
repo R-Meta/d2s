@@ -121,6 +121,7 @@ d2s
 ├── ...
 └── README.md
  ```
+### Run entire pipeline on your own data
 Then run this command:
  ```
 ./run_custom_data_pipeline.sh custom_dataset/
