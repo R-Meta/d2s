@@ -108,6 +108,7 @@ git clone --recursive https://github.com/thuanaislab/Hierarchical-Localization/
 cd Hierarchical-Localization/
 conda activate d2s
 python -m pip install -e .
+cd ..
 ```
 ### Prepare your own data 
 Create a ```custom_dataset``` folder as follow and put all images in ```images``` folder:

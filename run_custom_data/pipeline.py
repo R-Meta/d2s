@@ -90,11 +90,9 @@ def create_test_list(reference_sfm, workspace_path, test_rate=0.1):
         for item in test_list:
             f.write("%s\n" % item)
     
-    
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("workspace_path", default="../custom_datasets", type=Path)
+    parser.add_argument("workspace_path", default="../custom_dataset", type=Path)
     args = parser.parse_args()
     run_colmap(args)
     re_triangulation(args)
