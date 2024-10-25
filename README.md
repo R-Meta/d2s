@@ -30,6 +30,10 @@ This repository contains the Pytorch implementation of our papers:
 - [D2S: Representing Sparse Descriptors and 3D Coordinates for Camera Relocalization](https://thpjp.github.io/d2s/)
 - [Fast and Lightweight Scene Regressor for Camera Relocalization](https://arxiv.org/abs/2212.01830) (feat2map branch)
 
+Todo list:
+[x] release code
+[] work with custom data  
+
 ## Installation
 D2S is based on PyTorch. The main framework is implemented in Python.
 Python 3.9 + required packages
