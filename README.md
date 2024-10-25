@@ -32,7 +32,7 @@ This repository contains the Pytorch implementation of our papers:
 
 Todo list:
 - [x] release code
-- [] work with custom data  
+- [ ] work with custom data  
 
 ## Installation
 D2S is based on PyTorch. The main framework is implemented in Python.
