@@ -39,6 +39,7 @@ D2S is based on PyTorch. The main framework is implemented in Python.
 Python 3.9 + required packages
 ```
 git clone https://github.com/ais-lab/d2s.git
+cd d2s
 conda create --name d2s python=3.9
 conda activate d2s
 # Refer to https://pytorch.org/get-started/previous-versions/ to install pytorch compatible with your CUDA
