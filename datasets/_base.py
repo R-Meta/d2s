@@ -247,6 +247,9 @@ class Base_Collection():
         '''
         Return a path to image
         '''
+        if self.args.dataset == "custom":
+            img_path = os.path.join(self.args.dataset_dir, "images", image_name)
+            return img_path
         img_path = os.path.join(self.args.dataset_dir, self.args.dataset, self.args.scene, image_name)
         return img_path
     

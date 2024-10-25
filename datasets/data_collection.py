@@ -31,6 +31,8 @@ class DataCollection(Base_Collection):
             self.load_all_2Dpoints_Cambridge()
         elif dataset == "BKC":
             self.load_all_2Dpoints_BKC()
+        elif dataset == "custom":
+            self.load_all_2Dpoints_custom()
         else:
             raise NotImplemented
         
@@ -178,3 +180,39 @@ class DataCollection(Base_Collection):
                                 0 for ii in image_train.point3D_ids], 0)
                 self.imgname2imgclass[img_name].camera = Camera(cameras_all[image.camera_id],
                                                                           iscolmap=True)
+    
+    def load_all_2Dpoints_custom(self):
+        # load the camera model from colmap output
+        path_gt_3Dmodels_train = self.args.sfm_dir
+        cameras_train, images_train, points3D_train = read_model(path=path_gt_3Dmodels_train, ext=".bin")
+        name2id_train = {image.name: i for i, image in images_train.items()}
+        
+        test_path = os.path.join(self.args.dataset_dir, 'test_list.txt')
+        if os.path.exists(test_path):
+            with open(test_path, 'r') as f:
+                testlist = f.read().rstrip().split('\n')
+        else:
+            raise ValueError("Error! Input file/directory {0} not found.".format(test_path))
+        
+        for _, image in images_train.items():
+            img_name = image.name
+            self.imgname2imgclass[img_name] = Image_Class(img_name)
+            # fill data to TRAIN img classes
+            if img_name not in name2id_train:
+                continue
+            image_train = images_train[name2id_train[img_name]]
+            if len(image_train.point3D_ids) == 0:
+                continue
+            if img_name in testlist:
+                self.test_imgs.append(img_name)
+            else:
+                self.train_imgs.append(img_name)
+                
+            self.imgname2imgclass[img_name].pose = Pose(image.qvec, image.tvec)
+            self.imgname2imgclass[img_name].points2Ds = image_train.xys
+            self.imgname2imgclass[img_name].points3Ds = np.stack([points3D_train[ii].xyz if ii != -1 else
+                            np.array([0,0,0]) for ii in image_train.point3D_ids], 0)
+            self.imgname2imgclass[img_name].validPoints = np.stack([1 if ii != -1 else
+                            0 for ii in image_train.point3D_ids], 0)
+            self.imgname2imgclass[img_name].camera = Camera(cameras_train[image_train.camera_id],
+                                                                    iscolmap=True)

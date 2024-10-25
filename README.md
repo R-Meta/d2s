@@ -13,6 +13,7 @@
     - [Download preprocessed datasets](#Download-preprocessed-datasets)
 - [Evaluation](#Evaluation-with-pre-trained-models)
 - [Training](#Training)
+- [Run with your own dataset](#Run_with_your_own_dataset)
 - [BibTex Citation](#bibTex-citation)
 
 ## Introduction  
@@ -94,6 +95,36 @@ For pre-trained models of 7scenes, you can download it from [here](https://drive
 ```
 python runners/train.py --dataset indoor6 --scene scene1 -expv d2s
 ```
+## Run with your own dataset
+### Install COLMAP and Hloc
+- Install Colmap
+Install [colmap](https://colmap.github.io/install.html) from source or just run:
+```
+sudo snap install colmap
+```
+- Install [Hloc](https://github.com/thuanaislab/Hierarchical-Localization)
+```
+git clone --recursive https://github.com/thuanaislab/Hierarchical-Localization/
+cd Hierarchical-Localization/
+conda activate d2s
+python -m pip install -e .
+```
+### Prepare your own data 
+Create a ```custom_dataset``` folder as follow and put all images in ```images``` folder:
+ ```
+d2s
+├── custom_dataset
+│   ├── images
+|   |   ├── image_1.jpg
+|   |   ├── ...
+|   |   └── image_N.jpg
+├── ...
+└── README.md
+ ```
+Then run this command:
+ ```
+./run_custom_data_pipeline.sh custom_dataset/
+ ```
 
 ## BibTex Citation 
 If you find this project useful, please consider citing:
