@@ -33,7 +33,7 @@ This repository contains the Pytorch implementation of our papers:
 
 Todo list:
 - [x] release code
-- [ ] work with custom data  
+- [x] work with custom data  
 
 ## Installation
 D2S is based on PyTorch. The main framework is implemented in Python.
@@ -97,8 +97,7 @@ python runners/train.py --dataset indoor6 --scene scene1 -expv d2s
 ```
 ## Run with your own dataset
 ### Install COLMAP and Hloc
-- Install Colmap
-Install [colmap](https://colmap.github.io/install.html) from source or just run:
+- Install [COLMAP](https://colmap.github.io/install.html) from source or just run:
 ```
 sudo snap install colmap
 ```
