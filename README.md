@@ -31,8 +31,8 @@ This repository contains the Pytorch implementation of our papers:
 - [Fast and Lightweight Scene Regressor for Camera Relocalization](https://arxiv.org/abs/2212.01830) (feat2map branch)
 
 Todo list:
-[x] release code
-[] work with custom data  
+- [x] release code
+- [] work with custom data  
 
 ## Installation
 D2S is based on PyTorch. The main framework is implemented in Python.
