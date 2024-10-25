@@ -1,6 +1,5 @@
 ## Installation
-- Install Colmap
-Install [colmap](https://colmap.github.io/install.html) from source or just run:
+- Install [colmap](https://colmap.github.io/install.html) from source or just run:
 ```
 sudo snap install colmap
 ```
